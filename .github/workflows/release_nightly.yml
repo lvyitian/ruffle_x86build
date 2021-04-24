@@ -66,8 +66,9 @@ jobs:
           npm run build
           npm run docs
       - name: qwpwqwp
+        if: matrix.os == 'windows-latest'
         run: |
-          rustup target add i686-pc-windows-msvc
+            rustup target add i686-pc-windows-msvc
       - name: Build Windows
         if: matrix.os == 'windows-latest'
         uses: actions-rs/cargo@v1
